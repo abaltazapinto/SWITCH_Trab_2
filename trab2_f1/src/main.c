@@ -4,8 +4,12 @@
 
 static void pwm_init(void)
 {
-    /* PB7 = OC2 como saída */
-    DDRB |= (1 << PB7);
+    /* PB7 = OC2 como saída | PB7 = PWM (OC2) | PB5/ PB6 = direcao */
+    DDRB |= (1 << PB7) | (1 << PB5) | (1 << PB6);
+
+    /* sentido fixo para teste: Dir0 = 1, Dir1 = 0 */
+    PORTB |= (1 << PB5);
+    PORTB &= ~(1 << PB6);
 
     /*
      * Timer2 em Fast PWM
