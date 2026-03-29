@@ -14,11 +14,11 @@ static void pwm_init(void)
     /*
      * Timer2 em Fast PWM
      * saída não invertida em OC2
-     * prescaler = 128
+     * prescaler = 256
      */
     TCCR2 = (1 << WGM21) | (1 << WGM20)   /* Fast PWM */
           | (1 << COM21)                  /* non-inverting */
-          | (1 << CS22)  | (1 << CS20);   /* prescaler 128 */
+          | (1 << CS22)  | (1 << CS20);   /* prescaler 256 */
 
     /* ~50% duty cycle */
     OCR2 = 128;
