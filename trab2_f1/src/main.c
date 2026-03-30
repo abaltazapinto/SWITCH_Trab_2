@@ -12,7 +12,7 @@ static void pwm_init(void)
     PORTB &= ~(1 << PB6);
 
 
-    /* * Timer2 em Phase Correct PWM  |* saída não invertida |* prescaler = 64*/
+    /* * Timer2 em Phase Correct PWM  |* saída não ixnvertida |* prescaler = 64*/
     TCCR2 = (1 << WGM20) | (1 << COM21) | (1 << CS21) | (1 << CS20);
 
     /* ~50% duty cycle */
