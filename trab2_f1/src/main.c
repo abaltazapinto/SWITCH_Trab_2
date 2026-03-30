@@ -7,7 +7,7 @@ static void pwm_init(void)
     /* PB7 = OC2 como saída, PB5 / PB6 = direcao*/
     DDRB |= (1 << PB7) | (1 << PB5) | (1 << PB6);
 
-    /* Sentido fixo para teste */
+    /* Sentido fixo para teste  || DIR0 = 1 || DIR1 = 0 || direccao fixa */
     PORTB |= (1 << PB5);
     PORTB &= ~(1 << PB6);
 
